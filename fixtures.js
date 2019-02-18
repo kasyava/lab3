@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config');
 
 const User = require('./models/User');
+const Photo = require('./models/Photo');
 
 
 mongoose.set('useCreateIndex', true);
@@ -19,6 +20,13 @@ db.once('open', async () => {
     catch (e) {
         console.log('Collection Users where not present, skipping drop...');
     }
+    try{
+        await db.dropCollection('photos');
+
+    }
+    catch (e) {
+        console.log('Collection Photos where not present, skipping drop...');
+    }
 
 
 
@@ -34,6 +42,20 @@ db.once('open', async () => {
         role: 'admin'
     });
     console.log('Users created');
+
+
+    const photos = await Photo.create({
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
+    });
+    console.log('Photos created');
+
+
 
 
     db.close();
