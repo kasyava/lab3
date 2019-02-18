@@ -5,6 +5,7 @@ const nanoid = require("nanoid");
 
 const config = require("../config");
 const Photos = require("../models/Photo");
+const Users = require("../models/User");
 
 const auth = require("../middlewares/auth");
 const permit = require("../middlewares/permit");
@@ -28,13 +29,16 @@ router.get("/", (req, res) => {
         .catch(e => res.send(e).status(500))
 });
 
-router.post("/",  [auth, upload.single("image")], (req, res) => {
+router.post("/", [auth, upload.single("image")], async  (req, res) => {
 
     const data = req.body;
-    if (req.file) data.image = req.file.filename;
+    if (req.file) data.photo = req.file.filename;
 
-    const artist = new Photos(data);
-    artist.save()
+    const user = await User.findOne({username: req.body.user});
+    data.user = user.id;
+
+    const photos = new Photos(data);
+    photos.save()
         .then((result) => res.send(result))
         .catch(error => res.status(400).send(error));
 
