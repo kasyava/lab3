@@ -11,6 +11,18 @@ $(() => {
     msgList = $('#msgList');
     let formLoginModal = $("#formLoginModal");
     let formRegistrationModal = $("#formRegistrationModal");
+    let formAddModal = $("#formAddModal");
+
+    $("#addPhoto").click((e)=>{
+        e.preventDefault();
+        formAddModal.modal('show');
+    });
+
+    formAddModal.on('hidden.bs.modal', function() {
+        $(this).find("input,textarea,select").val('').end();
+
+    });
+
 
     $("#showLoginForm").click((e)=>{
         e.preventDefault();
@@ -33,25 +45,39 @@ $(() => {
 
 
 
+
+    const getQuery = (url) =>{
+        return $.ajax(
+            {
+                url: url,
+                type: 'GET',
+                processData: false,
+                contentType: false
+            }
+        );
+    };
+
+    getQuery('photos').then(result => printPhotos(result));
+
+
+
+
     let checkAuth = () =>{
         if(user!==null){
             header = {"Token":user.token};
 
-
-
-            $( "#showLoginForm" ).hide();//.css( "display", "none" );
-            $( "#showRegistrationForm" ).hide();//.css( "display", "none" );
-            $( "#btnLogout" ).show();//.css( "display", "none" );
-
-            $( ".wrapper" ).css( "display", "block" );
-            $( ".one" ).css( "display", "inline-block" );
-            $( ".two" ).css( "display", "inline-block" );
-
-            //if(user.role!=='admin') $('#idAddData').remove();
+            $( "#showLoginForm" ).hide();
+            $( "#showRegistrationForm" ).hide();
+            $( "#btnLogout" ).show();
+            $('#addPhoto').show();
 
         }
         else{
-            $('#addPhoto').remove();
+            header= null;
+            $('#addPhoto').hide();
+            $( "#btnLogout" ).hide();
+            $( "#showLoginForm" ).show();
+            $( "#showRegistrationForm" ).show();
         }
     };
 
@@ -79,10 +105,8 @@ $(() => {
     $('#btnLogout').on('click', (e) => {
         e.preventDefault();
 
-        //const  user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')): null;
-
         if(user !== null){
-            //const headers = {"Token":user.token};
+
             $.ajax({
                 url: 'http://localhost:8000/users/sessions',
                 headers: header,
@@ -92,6 +116,7 @@ $(() => {
             }).then(() =>{
                 localStorage.removeItem('user');
                 document.location.reload();
+
             })
         }
 
@@ -115,26 +140,30 @@ $(() => {
             document.location.reload();
 
         });
-        //checkAuth();
+
+    });
+    $('#btnAdd').on('click', (e) =>{
+        e.preventDefault();
+
+        const data = new FormData(document.getElementById('formAdd'));
+        data.append('user', user.name);
+
+        $.ajax({
+            url: 'http://localhost:8000/photos/',
+            data: data,
+            headers: header,
+            processData: false,
+            contentType: false,
+            type: 'POST'
+        }).then(() =>{
+            document.location.reload();
+        });
+
 
     });
 
 
 
-
-
-    const getQuery = (url) =>{
-        return $.ajax(
-            {
-                url: url,
-                type: 'GET',
-                processData: false,
-                contentType: false
-            }
-        );
-    };
-
-    getQuery('photos').then(result => printPhotos(result));
 
 
     const printPhotos = (data) =>{
@@ -174,8 +203,7 @@ $(() => {
                     processData: false,
                     contentType: false
                 })
-                    .then(responce => {
-                        console.log(responce);
+                    .then(() => {
                         getQuery('photos').then(result => printPhotos(result));
                     });
 

@@ -53,52 +53,16 @@ db.once('open', async () => {
         photo: 'mountains.jpg',
         user: user.id
     },{
-        title: 'Водопады ручья Руфабго',
-        photo: 'waterfall.jpg',
-        user: admin.id
-    },{
-        title: 'Горы Сочи',
-        photo: 'mountains.jpg',
+        title: 'Вечернее море',
+        photo: 'Evening_sea.jpg',
         user: user.id
     },{
-        title: 'Водопады ручья Руфабго',
-        photo: 'waterfall.jpg',
-        user: admin.id
-    },{
-        title: 'Горы Сочи',
-        photo: 'mountains.jpg',
-        user: user.id
-    },{
-        title: 'Водопады ручья Руфабго',
-        photo: 'waterfall.jpg',
-        user: admin.id
-    },{
-        title: 'Горы Сочи',
-        photo: 'mountains.jpg',
-        user: user.id
-    },{
-        title: 'Водопады ручья Руфабго',
-        photo: 'waterfall.jpg',
-        user: admin.id
-    },{
-        title: 'Горы Сочи',
-        photo: 'mountains.jpg',
-        user: user.id
-    },{
-        title: 'Водопады ручья Руфабго',
-        photo: 'waterfall.jpg',
-        user: admin.id
-    },{
-        title: 'Горы Сочи',
-        photo: 'mountains.jpg',
+        title: 'Москва',
+        photo: 'Moscow-1.jpg',
         user: user.id
     });
     console.log('Photos created');
 
-
-
-
     db.close();
-
 
 });

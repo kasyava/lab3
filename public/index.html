@@ -98,53 +98,37 @@
 
 
 
-<!--<div class="container">
+<div class="modal fade" id="formAddModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="lineModalLabel">Registration form</h3>
+            </div>
+            <div class="modal-body">
 
-    <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <form id="formLogin" class="col-12">
-                <div class="form-group">
-                    <label for="user">Login</label><br>
-                    <input type="text" class="form-control" id="user" name="username"  required>
-                </div>
-                <div class="form-group">
-                    <label for="pass">Password</label><br>
-                    <input type="text" class="form-control" id="pass" name="password"  required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="login" class="btn btn-primary">Login</button>
-                </div>
-            </form>
+                <!-- content goes here -->
+                <form id="formAdd" name="formData" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label for="titlePhoto">Title</label>
+                        <input name="title" type="text" id="titlePhoto" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input name="photo" id="photo" type="file" class="form-control-file" required />
+                    </div>
+                    <button type="submit" id="btnAdd" class="btn btn-primary">Send photo</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
         </div>
     </div>
-    <hr>
-    <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <form id="formRegister" class="col-12" >
-                <div class="form-group">
-                    <label for="username">Login</label><br>
-                    <input type="text" class="form-control" id="username" name="username"  required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label><br>
-                    <input type="text" class="form-control" id="password" name="password"  required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="register" class="btn btn-primary">Registration</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
-</div>-->
+</div>
 
 <div class="wrapper">
     <div id="msgList" class="col"></div>
 </div>
-
-
-
 
 
 </body>

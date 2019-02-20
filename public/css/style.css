@@ -1,0 +1,117 @@
+html,body, .wrapper, .col{
+	height:auto;
+}
+.wrapper{
+	overflow: hidden;
+	//display: none;
+}
+.col{
+	float:left;
+	border-style: solid;
+	border-width: thin;
+	background-color: antiquewhite;
+
+}
+.one{
+	width:65%;
+	text-align: left;
+	display: inline-block;
+}
+.two{
+	width:30%;
+	//background-color: green;
+	text-align: right;
+	display: inline-block;
+}
+.frm{
+	width:50%;
+	//text-align: center;
+	margin: 20px;
+}
+
+.header{
+	height: 60px;
+
+	background-color: #17a2b8;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+
+
+}
+
+p{
+	//text-decoration: none;
+	color: darkblue;
+	margin: 0 5px;
+}
+
+
+.message-image{
+	//width:10%;
+
+	background-color: darkred;
+	float: left;
+
+}
+.message-text{
+
+	height: 150px;
+
+	//background-color: green;
+	//padding-top: 20px;
+	padding: 20px 20px 20px 20px;
+	display: table-cell;
+
+
+}
+.message-author{
+	width: 100%;
+	text-align: center;
+	color: darkred;
+}
+
+.message-album{
+	float: left;
+	width: 200px;
+	height: 230px;
+	text-align: center;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.popup {
+	position: absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+.popup_bg {
+	background:rgba(0,0,0,0.3);
+	position:fixed;
+	z-index:1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+}
+
+
+.popup_img {
+	position: fixed;
+	z-index:2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 90%;
+}
+
+.popup_img {
+	pointer-events: none;
+}

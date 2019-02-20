@@ -29,12 +29,18 @@ router.get("/", (req, res) => {
         .catch(e => res.send(e).status(500))
 });
 
-router.post("/", [auth, upload.single("image")], async  (req, res) => {
+router.post("/", auth, upload.single("photo"), async  (req, res) => {
 
     const data = req.body;
+
     if (req.file) data.photo = req.file.filename;
 
-    const user = await User.findOne({username: req.body.user});
+    if (!data.photo || !data.title || !req.body.user){
+        res.status(400).send("no data");
+        return;
+    }
+
+    const user = await Users.findOne({username: req.body.user});
     data.user = user.id;
 
     const photos = new Photos(data);
