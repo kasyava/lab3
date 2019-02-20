@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home work #14</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="header">
+
+    <div class="one">
+       <h2 style="width:280px; display: inline-block">Photo Gallery</h2>
+        <button type="submit" id="addPhoto" class="btn btn-primary">Add Photo</button>
+    </div>
+    <div class="two">
+        <button type="submit" id="showLoginForm" class="btn btn-primary" data-toggle="modal" data-target="#modalLoginForm">Login</button>
+        <button type="submit" id="showRegistrationForm" class="btn btn-primary">Registaration</button>
+        <button type="submit" id="btnLogout" class="btn btn-primary" style="display: none">Logout</button>
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="formLoginModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="lineModalLabel">Login form</h3>
+            </div>
+            <div class="modal-body">
+
+                <!-- content goes here -->
+                <form id="formLogin" name="formData" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label for="usernameLogin">Login</label>
+                        <input name="username" type="text" id="usernameLogin" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordLogin">Password</label>
+                        <input name="password" id="passwordLogin" type="password" class="form-control" required />
+                    </div>
+
+                    <button type="submit" id="btnLogin" class="btn btn-primary">Login</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="formRegistrationModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="lineModalLabel">Registration form</h3>
+            </div>
+            <div class="modal-body">
+
+                <!-- content goes here -->
+                <form id="formRegistration" name="formData" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label for="usernameRegistration">Login</label>
+                        <input name="username" type="text" id="usernameRegistration" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordRegistration">Password</label>
+                        <input name="password" id="passwordRegistration" type="password" class="form-control" required />
+                    </div>
+
+                    <button type="submit" id="btnRegistration" class="btn btn-primary">Registration</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<div class="container">
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <form id="formLogin" class="col-12">
+                <div class="form-group">
+                    <label for="user">Login</label><br>
+                    <input type="text" class="form-control" id="user" name="username"  required>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label><br>
+                    <input type="text" class="form-control" id="pass" name="password"  required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="login" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <form id="formRegister" class="col-12" >
+                <div class="form-group">
+                    <label for="username">Login</label><br>
+                    <input type="text" class="form-control" id="username" name="username"  required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label><br>
+                    <input type="text" class="form-control" id="password" name="password"  required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="register" class="btn btn-primary">Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>-->
+
+<div class="wrapper">
+    <div id="msgList" class="col"></div>
+</div>
+
+
+
+
+
+</body>
+</html>

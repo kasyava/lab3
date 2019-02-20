@@ -52,6 +52,46 @@ db.once('open', async () => {
         title: 'Горы Сочи',
         photo: 'mountains.jpg',
         user: user.id
+    },{
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
+    },{
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
+    },{
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
+    },{
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
+    },{
+        title: 'Водопады ручья Руфабго',
+        photo: 'waterfall.jpg',
+        user: admin.id
+    },{
+        title: 'Горы Сочи',
+        photo: 'mountains.jpg',
+        user: user.id
     });
     console.log('Photos created');
 

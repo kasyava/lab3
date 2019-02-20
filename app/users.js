@@ -32,7 +32,7 @@ const upload = multer({storage});
         user.generateToken();
 
         user.save()
-            .then(user => res.send({name: user.username, token: user.token}))
+            .then(user => res.send({name: user.username, role: user.role, token: user.token}))
             .catch(error => res.status(400).send(error));
     });
 
